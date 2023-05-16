@@ -20,7 +20,7 @@
                 </div>
                 <div class="register-form">
                     <form onsubmit="register(event)">
-                        <input id="instagram_userEmail" type="text" placeholder="Email" required />
+                        <input id="instagram_userEmail" type="email" placeholder="Email" required />
                         <input id="instagram_userName" type="text" placeholder="Username" required />
                         <input id="instagram_userPassword" type="password" placeholder="Password" required />
                         <input id="instagram_userConfirmPassword" type="password" placeholder="Confirm Password"
@@ -40,8 +40,8 @@
                     </div>
                 </div>
             </div>
-            <div class="inner-bot">
-                <p>Have an Account? <span>Log in</span></p>
+            <div id="redirect" class="inner-bot">
+                <!-- <p>Have an Account? <span>Log in</span></p> -->
             </div>
         </div>
     </div>
@@ -110,6 +110,16 @@
     </div>
 
     <script>
+
+        window.onload = () =>{
+            var divToRedirectLogin = document.getElementById("redirect");
+            var loginStructure = `<p>Have an Account? <span onclick='redirectToLogin()'>Log in</span></p>`;
+            divToRedirectLogin.innerHTML = loginStructure;
+        }
+
+        function redirectToLogin(){
+            window.location.href = `./login.html`;
+        }
 
 
         function register(event) {
