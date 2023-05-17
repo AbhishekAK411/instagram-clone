@@ -218,6 +218,144 @@
     justify-content: space-between;
 }
 
+#container{
+    width: 100vw;
+    height: 100vh;
+    /* border: 1px solid red; */
+}
+
+.navbar{
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-right: 1px solid lightgrey;
+}
+
+.insta-logo{
+    width: 100%;
+    height: 10%;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* border: 1px solid red; */
+}
+
+.insta-logo img{
+    width: 60%;
+    margin-left: 5%;
+    /* border: 1px solid red; */
+}
+
+.navbar-items{
+    width: 100%;
+    height: 75%;
+    /* border: 1px solid red; */
+}
+
+.section{
+    width: 90%;
+    height: 12%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+}
+
+.section:hover{
+    border-radius: 10px;
+    background-color: lightgrey;
+}
+
+.section p{
+    padding-left: 10px;
+    cursor: default;
+}
+
+.more-tab{
+    width: 100%;
+    height: 10%;
+    /* border: 1px solid red; */
+}
+
+.sectionTab{
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+    /* margin-top: 2%; */
+    /* border: 1px solid red; */
+}
+
+.sectionTab:hover{
+    border-radius: 10px;
+    background-color: lightgrey;
+}
+
+.sectionTab p{
+    padding-left: 10px;
+    cursor: default;
+}
+
+.main-content{
+    width: 80%;
+    height: 100%;
+    /* border: 1px solid red; */
+    /* position: relative; */
+    /* left: 20%; */
+    margin-left: auto;
+    display: flex;
+}
+
+.main-left{
+    width: 65%;
+    height: 100%;
+    border: 1px solid red;
+}
+
+.main-right{
+    width: 35%;
+    height: 70%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.main-right-top{
+    width: 100%;
+    height: 80%;
+    border: 1px solid red;
+}
+
+.main-right-bot{
+    width: 100%;
+    height: 20%;
+    /* border: 1px solid red; */
+}
+
+.main-right-bot-top{
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid red; */
+}
+
+.main-right-bot-top p{
+    font-size: 0.75em;
+}
+
+.main-right-bot-bot{
+    width: 100%;
+    height: 30%;
+    /* border: 1px solid red; */
+    display: flex;
+    font-size: 0.75em;
+}
+
+
 
 
 
