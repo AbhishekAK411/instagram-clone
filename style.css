@@ -302,8 +302,8 @@
 }
 
 .main-content{
-    width: 80%;
-    height: 100%;
+    width: 80vw;
+    height: 100vh;
     /* border: 1px solid red; */
     /* position: relative; */
     /* left: 20%; */
@@ -313,9 +313,173 @@
 
 .main-left{
     width: 65%;
-    height: 100%;
-    border: 1px solid red;
+    /* height: 1000px; */
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
+
+.left-top{
+    width: 90%;
+    height: 19%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+.story {
+    width: 15%;
+    height: 70%;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    /* background-color: #F5F5F5; */
+    border-radius: 8px;
+    overflow: hidden;
+}
+  
+.story-image {
+    width: 100%;
+    height: 80%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px 8px 0 0;
+    border-radius: 50%;
+}
+
+.story-image img{
+    width: 100%;
+}
+  
+.story-user {
+    margin-top: 10px;
+    margin-bottom: 15%;
+    font-size: 14px;
+    color: #333333;
+}
+
+
+.left-bot{
+    width: 90%;
+    height: 100%;
+    /* border: 1px solid red; */
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    /* justify-content: center; */
+}
+
+.left-bot::-webkit-scrollbar {
+    width: 6px;
+}
+  
+.left-bot::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+  
+.left-bot::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.post{
+    width: 70%;
+    height: 700px;
+    margin: auto;
+    margin-bottom: 5%;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    /* border: 1px solid red; */
+}
+
+.post-title{
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid lightgrey; */
+    /* border: 1px solid red; */
+}
+
+.profileIcon{
+    width: 15%;
+    height: 90%;
+    /* border: 1px solid red; */
+}
+
+.profileIcon img{
+    width: 100%;
+    scale: 0.7;
+}
+
+.profileName{
+    width: 65%;
+    padding-left: 20px;
+    /* height: 90%; */
+    /* border: 1px solid red; */
+}
+
+.tripleDot{
+    width: 20%;
+    /* height: 90%; */
+    /* border: 1px solid red; */
+    padding-left: 50px;
+}
+
+.post-image{
+    width: 100%;
+    height: 70%;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+    /* border-radius: 10px; */
+    overflow: hidden;
+}
+
+.post-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.post-desc{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* border-bottom: 1px solid lightgrey; */
+    /* border: 1px solid red; */
+}
+
+.desc-icons{
+    width: 100%;
+    height: 30%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: space-between;
+}
+
+.desc-desc{
+    width: 62%;
+    height: 50%;
+    /* border: 1px solid red; */
+    padding-top: 2%;
+    display: flex;
+    align-items: center;
+}
+
+.desc-desc p {
+    padding-left: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 
 .main-right{
     width: 35%;
@@ -328,12 +492,110 @@
 .main-right-top{
     width: 100%;
     height: 80%;
-    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+}
+
+.username{
+    width: 100%;
+    height: 25%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+.username-image{
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+    /* border: 1px solid red; */
+}
+
+.username-image img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.username-name{
+    width: 45%;
+    /* height: 100%; */
+    /* border: 1px solid red; */
+}
+
+.username-name p{
+    padding-left: 20px;
+}
+
+.username-switch{
+    width: 25%;
+    cursor: pointer;
+    /* height: 50%; */
+    /* border: 1px solid red; */
+}
+
+.username-switch p{
+    padding-left: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: rgb(0,149,246);
+}
+
+.suggest{
+    width: 100%;
+    height: 70%;
+    /* border: 1px solid red; */
+}
+
+.suggest-one{
+    width: 100%;
+    height: 25%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+}
+
+.suggest-image{
+    width: 20%;
+    height: 100%;
+    margin-bottom: 2%;
+    /* border: 1px solid red; */
+}
+
+.suggest-image img{
+    width: 100%;
+    scale: 0.9;
+    /* height: 100%; */
+}
+
+.suggest-user{
+    width: 50%;
+    /* border: 1px solid red; */
+}
+
+.suggest-user p{
+    padding-left: 20px;
+}
+
+.suggest-follow{
+    width: 25%;
+    cursor: pointer;
+    /* border: 1px solid red; */
+}
+
+.suggest-follow p{
+    padding-left: 10px;
+    font-size: 0.8em;
+    font-weight: bold;
+    color: rgb(0,149,246);
 }
 
 .main-right-bot{
     width: 100%;
     height: 20%;
+    margin-top: 5%;
     /* border: 1px solid red; */
 }
 

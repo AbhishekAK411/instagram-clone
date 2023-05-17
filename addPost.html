@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Posts</title>
+</head>
+<body>
+    <form onsubmit="addPost(event)">
+        <label>username</label><br/>
+        <input id="instagram_addPostUsername" type="text" placeholder="Enter username" /><br/><br/>
+        <label>Post Image</label><br/>
+        <input id="instagram_addPostImage" type="url" placeholder="Enter Image URL" /><br/><br/>
+        <label>Post Description</label><br/>
+        <input id="instagram_addPostDesc" type="text" placeholder="Enter Description of Post" /><br/><br/>
+        <input type="submit" value="Send Post" /><br/>
+    </form>
+
+    <script>
+
+        function addPost(event){
+            event.preventDefault();
+
+            var i_username = document.getElementById("instagram_addPostUsername").value;
+            var i_image = document.getElementById("instagram_addPostImage").value;
+            var i_desc = document.getElementById("instagram_addPostDesc").value;
+
+            var post_object = {i_username,i_image,i_desc};
+            var instagram_postStorage = JSON.parse(localStorage.getItem("instagram_post")) || [];
+            instagram_postStorage.push(post_object);
+            localStorage.setItem("instagram_post", JSON.stringify(instagram_postStorage));
+            document.getElementById("instagram_addPostUsername").value = "";
+            document.getElementById("instagram_addPostImage").value = "";
+            document.getElementById("instagram_addPostDesc").value = "";
+        }
+
+
+    </script>
+</body>
+</html>
