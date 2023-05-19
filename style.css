@@ -329,7 +329,7 @@
     height: 300px;
     background-color: #f9f9f9;
     border-radius: 10px;
-    box-shadow: 0 8px 16px 0px rgba(0,0,0,0.5);
+    box-shadow: 0 0 16px 5px rgba(0,0,0,0.5);
     padding: 12px 6px;
     display: none;
     list-style: none;
@@ -668,6 +668,152 @@
     /* border: 1px solid red; */
     display: flex;
     font-size: 0.75em;
+}
+
+.profile-content{
+    width: 80%;
+    height: 100vh;
+    /* border: 1px solid red; */
+    /* position: relative; */
+    margin-left: auto;
+    /* display: flex; */
+    overflow: auto;
+}
+
+.profile-top{
+    width: 100%;
+    height: 50%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+}
+
+.profile-main-image{
+    width: 30%;
+    height: 70%;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-image-circle{
+    width: 57%;
+    height: 80%;
+    overflow: hidden;
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    border-style: double;
+}
+
+.main-image-circle img{
+    width: 100%;
+    height: 100%;
+}
+
+.profile-main-details{
+    width: 35%;
+    height: 75%;
+    /* border: 1px solid red; */
+}
+
+.det-top{
+    width: 70%;
+    height: 30%;
+    /* border: 1px solid red; */
+    display: flex;
+    font-size: 1.2em;
+    text-transform: capitalize;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.det-top button{
+    border: none;
+    outline: none;
+    width: 45%;
+    height: 60%;
+    border-radius: 10px;
+    font-weight: 900;
+}
+
+.det-mid{
+    width: 80%;
+    height: 20%;
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    font-size: 0.95em;
+    justify-content: space-between;
+}
+
+.det-bot{
+    width: 100%;
+    height: 40%;
+    /* border: 1px solid red; */
+}
+
+.det-bot p{
+    font-weight: bold;
+    font-size: 1.05em;
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+
+
+.profile-posts{
+    width: 100%;
+    height: 40%;
+    /* border: 1px solid red; */
+}
+
+.post-type{
+    width: 90%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    font-weight: bold;
+    font-size: 0.8em;
+    cursor: pointer;
+    border-top: 1px solid lightgrey;
+}
+
+.posts-tab{
+    width: 10%;
+    /* height: 100%; */
+    /* border: 1px solid red; */
+}
+
+.saved-tab{
+    width: 10%;
+    /* border: 1px solid red; */
+}
+
+.profile-posts-images{
+    width: 90%;
+    display: flex;
+    margin: auto;
+    flex-wrap: wrap;
+    row-gap: 0.3rem;
+    column-gap: 0.3rem;
+    /* justify-content: space-between; */
+    /* border: 1px solid red; */
+}
+
+.profilePost-image{
+    width: 33%;
+    height: 300px;
+    /* border: 1px solid red; */
+}
+
+.profilePost-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
