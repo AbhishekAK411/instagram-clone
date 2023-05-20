@@ -115,7 +115,7 @@
                             <p>More</p>
                         </button>
                         <ul class="dropdown-menu">
-                            <li>Settings</li>
+                            <li onclick="redirectToEditProfile()">Settings</li>
                             <li>Saved</li>
                             <li onclick="redirectProfile()">Profile</li>
                             <li>Switch Account</li>
@@ -401,6 +401,10 @@
 
         function redirectHome(){
             window.location.href = `./home.html`;
+        }
+
+        function redirectToEditProfile(){
+            window.location.href = `./editProfile.html`;
         }
 
     </script>
