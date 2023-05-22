@@ -132,7 +132,15 @@
                 <div class="search-input">
                     <input type="text" placeholder="Enter username" />
                 </div>
-                <div class="search-result"></div>
+                <div class="search-result">
+                    <div class="results">
+                        <div class="search-profile-photo">
+                            <img src="" alt="" />
+                        </div>
+                        <div class="search-profile-name"></div>
+                        <div class="search-profile-visit"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -196,18 +204,16 @@
             window.location.href = `./search.html`;
         }
 
-        var isBoxVisible = false;
-
+        
+        
         function openSearchBox(){
 
             var box = document.getElementById("searchBox");
-
-            if(isBoxVisible){
-                box.style.display = 'none';
-                isBoxVisible = false;
-            } else {
+            
+            if(box.style.display == 'none'){
                 box.style.display = 'block';
-                isBoxVisible = true;
+            } else {
+                box.style.display = 'none';
             }
 
 
