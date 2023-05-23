@@ -127,19 +127,26 @@
         </div>
 
 
-        <div id="searchBox" class="search-bar">
+        <div id="searchBox"  class="search-bar">
             <div class="inner-search">
                 <div class="search-input">
-                    <input type="text" placeholder="Enter username" />
+                    <form onsubmit="SearchUser(event)">
+                        <input class="search-input-box" id="username_search_input" type="text" placeholder="Enter username" />
+                        <input class="search-button" type="submit" value="search" />
+                    </form>
                 </div>
-                <div class="search-result">
-                    <div class="results">
+                <div id="searchBoxResult" class="search-result">
+                    <!-- <div class="results">
                         <div class="search-profile-photo">
-                            <img src="" alt="" />
+                            <img src="https://images.alphacoders.com/205/thumbbig-205913.webp" alt="" />
                         </div>
-                        <div class="search-profile-name"></div>
-                        <div class="search-profile-visit"></div>
-                    </div>
+                        <div class="search-profile-name">
+                            <p>username</p>
+                        </div>
+                        <div class="search-profile-visit">
+                            <button>Follow</button>
+                        </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -217,6 +224,40 @@
             }
 
 
+        }
+
+        function SearchUser(event){
+            event.preventDefault();
+
+            var userSearchInput = document.getElementById("username_search_input").value;
+
+            if(userSearchInput){
+
+                var searchBoxResult = document.getElementById("searchBoxResult");
+                var instagram_userData = JSON.parse(localStorage.getItem("instagram_users"));
+                var outputString = "";
+                for(var i=0;i<instagram_userData.length;i++){
+                    if(userSearchInput == instagram_userData[i].userName){
+                        outputString = `<div class="results">
+                        <div class="search-profile-photo">
+                            <img src="https://images.alphacoders.com/205/thumbbig-205913.webp" alt="" />
+                        </div>
+                        <div class="search-profile-name">
+                            <p>${instagram_userData[i].userName}</p>
+                        </div>
+                        <div class="search-profile-visit">
+                            <button>Follow</button>
+                        </div>
+                    </div>`;
+                    }
+                }
+                searchBoxResult.innerHTML = outputString;
+
+
+
+            } else {
+                alert("search field empty");
+            }
         }
 
 
