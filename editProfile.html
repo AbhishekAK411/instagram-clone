@@ -80,7 +80,7 @@
                     </svg>
                     <p>Notifications</p>
                 </div>
-                <div class="section">
+                <div onclick="redirectToCreatePost()" class="section">
                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256">
                         <path d="M216,48V208a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V48a8,8,0,0,1,8-8H208A8,8,0,0,1,216,48Z"
                             opacity="0.2"></path>
@@ -300,15 +300,51 @@
             let instagram_currentUser = JSON.parse(localStorage.getItem("instagram_current_user"));
 
             if (!!instagram_currentUser) {
+
+                var instagram_userData = JSON.parse(localStorage.getItem("instagram_users"));
+
+                // -> dynamically update the current user using the user data key in the local storage.
+                // -> There are two methods, one is listed below in comments and the other that is provided inside the for loop.
+
+
+                // var currentUserData = instagram_userData.find(function(user){
+                //     console.log(user.userEmail);
+                //     return user.userEmail === instagram_currentUser.userEmail;
+                // });
+
+                // console.log(currentUserData);
+
+                // if(currentUserData){
+                //     instagram_currentUser.userBio = currentUserData.userBio;
+                //     instagram_currentUser.userImage = currentUserData.userImage;
+                //     instagram_currentUser.userName = currentUserData.userName;
+                //     instagram_currentUser.userPosts = currentUserData.userPosts;
+                // }
+
+                // localStorage.setItem("instagram_current_user", JSON.stringify(instagram_currentUser));
+                    
+                    for(var i=0;i<instagram_userData.length;i++){
+                        if(instagram_currentUser.userEmail==instagram_userData[i].userEmail){
+                            instagram_currentUser.userImage = instagram_userData[i].userImage;
+                            instagram_currentUser.userBio = instagram_userData[i].userBio;
+                            instagram_currentUser.userName = instagram_userData[i].userName;
+                            instagram_currentUser.userPosts = instagram_userData[i].posts;
+                        }
+                    }
+
+                    localStorage.setItem("instagram_current_user", JSON.stringify(instagram_currentUser));
+
+                
+
+
                 var divToAppendUsername = document.getElementById("replace-username");
                 var usernameStructure = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,128a95.76,95.76,0,0,1-31.8,71.37A72,72,0,0,0,128,160a40,40,0,1,0-40-40,40,40,0,0,0,40,40,72,72,0,0,0-64.2,39.37h0A96,96,0,1,1,224,128Z" opacity="0.2"></path><path d="M128,24A104,104,0,1,0,232,128,104.11,104.11,0,0,0,128,24ZM74.08,197.5a64,64,0,0,1,107.84,0,87.83,87.83,0,0,1-107.84,0ZM96,120a32,32,0,1,1,32,32A32,32,0,0,1,96,120Zm97.76,66.41a79.66,79.66,0,0,0-36.06-28.75,48,48,0,1,0-59.4,0,79.66,79.66,0,0,0-36.06,28.75,88,88,0,1,1,131.52,0Z"></path></svg>
                     <p>${instagram_currentUser.userName}</p>`;
                 divToAppendUsername.innerHTML = usernameStructure;
 
                 //settings username replace
-
                 var divToAppendSettingUsername = document.getElementById("replace-setting-username");
-                var settingUsernameStructure = `<img src="${instagram_currentUser.userImage}" alt="" />
+                var settingUsernameStructure = `<img src="${instagram_currentUser.userImage}" alt="Upload Photo" />
                             <p>${instagram_currentUser.userName}</p>`;
                 divToAppendSettingUsername.innerHTML = settingUsernameStructure;
 
@@ -359,15 +395,28 @@
             var instagram_currentUser = JSON.parse(localStorage.getItem("instagram_current_user"));
             var instagram_userData = JSON.parse(localStorage.getItem("instagram_users"));
 
-            if (r_username == instagram_currentUser.userName) {
+            if (r_username === instagram_currentUser.userName) {
                 alert("currently using same username");
             } else {
 
-                instagram_currentUser.userName = r_username;
-                instagram_currentUser.userImage = r_image;
-                instagram_currentUser.userBio = r_bio;
+                let flagForEditSetting = false;
+                for(let i=0;i<instagram_userData.length;i++){
+                    if(instagram_currentUser.userEmail == instagram_userData[i].userEmail){
+                        instagram_userData[i].userBio = r_bio;
+                        instagram_userData[i].userImage = r_image;
+                        instagram_userData[i].userName = r_username;
 
-                localStorage.setItem("instagram_current_user", JSON.stringify(instagram_currentUser));
+                        localStorage.setItem("instagram_users", JSON.stringify(instagram_userData));
+                        flagForEditSetting = true;
+                        break;
+                    }
+                }
+
+                if(flagForEditSetting){
+                    alert("Profile Settings updated successfully.")
+                } else {
+                    alert("Failed to update profile settings");
+                }
 
                 document.getElementById("replace-username").value = "";
                 document.getElementById("replace-image").value = "";
@@ -378,6 +427,10 @@
 
         function redirectToSearch(){
             window.location.href = `./search.html`;
+        }
+
+        function redirectToCreatePost(){
+            window.location.href = `./addPost.html`;
         }
 
     </script>

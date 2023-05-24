@@ -130,7 +130,9 @@
             var i_username = document.getElementById("instagram_userName").value;
             var i_password = document.getElementById("instagram_userPassword").value;
             var i_confirmPassword = document.getElementById("instagram_userConfirmPassword").value;
-
+            var userImage = "";
+            var userBio = "";
+            var userPosts = [];
 
             if(i_email && i_username && i_password && i_confirmPassword){
                 if(i_password.length >= 8 && i_confirmPassword.length >=8){
@@ -146,7 +148,7 @@
                         }
 
                         if(!flag){
-                            var instagram_object = {userName: i_username, userEmail: i_email, userPassword: i_password, userConfirmPassword: i_confirmPassword};
+                            var instagram_object = {userName: i_username, userEmail: i_email, userPassword: i_password, userConfirmPassword: i_confirmPassword, userBio: userBio, userImage: userImage, userPosts: userPosts};
                             instagram_storage.push(instagram_object);
                             localStorage.setItem("instagram_users", JSON.stringify(instagram_storage));
                             alert("Registration Successful");

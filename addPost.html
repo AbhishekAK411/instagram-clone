@@ -8,8 +8,6 @@
 </head>
 <body>
     <form onsubmit="addPost(event)">
-        <label>username</label><br/>
-        <input id="instagram_addPostUsername" type="text" placeholder="Enter username" /><br/><br/>
         <label>Post Image</label><br/>
         <input id="instagram_addPostImage" type="url" placeholder="Enter Image URL" /><br/><br/>
         <label>Post Description</label><br/>
@@ -19,20 +17,36 @@
 
     <script>
 
+
+
         function addPost(event){
             event.preventDefault();
 
-            var i_username = document.getElementById("instagram_addPostUsername").value;
-            var i_image = document.getElementById("instagram_addPostImage").value;
-            var i_desc = document.getElementById("instagram_addPostDesc").value;
+            var instagram_currentUser = JSON.parse(localStorage.getItem("instagram_current_user"));
 
-            var post_object = {i_username,i_image,i_desc};
-            var instagram_postStorage = JSON.parse(localStorage.getItem("instagram_post")) || [];
-            instagram_postStorage.push(post_object);
-            localStorage.setItem("instagram_post", JSON.stringify(instagram_postStorage));
-            document.getElementById("instagram_addPostUsername").value = "";
-            document.getElementById("instagram_addPostImage").value = "";
-            document.getElementById("instagram_addPostDesc").value = "";
+            if(!!instagram_currentUser){
+
+                var i_postImage = document.getElementById("instagram_addPostImage").value;
+                var i_postDesc = document.getElementById("instagram_addPostDesc").value;
+
+                var post_object = {i_postImage,i_postDesc};
+
+                var instagram_userData = JSON.parse(localStorage.getItem("instagram_users"));
+                for(var i=0;i<instagram_userData.length;i++){
+                    if(instagram_currentUser.userEmail == instagram_userData[i].userEmail){
+                        if(instagram_userData[i].userPosts == undefined){
+                            instagram_userData[i].userPosts = [post_object];
+                        } else {
+                            instagram_userData[i].userPosts.push(post_object);
+                        }
+                    }
+                }
+                localStorage.setItem("instagram_users", JSON.stringify(instagram_userData));
+
+
+            }
+
+
         }
 
 
