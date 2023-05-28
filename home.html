@@ -171,7 +171,7 @@
                     </div> -->
                 </div>
                 <div id="add-post" class="left-bot">
-                    <!-- <div class="post">
+                    <div class="post">
                         <div class="post-title">
                             <div class="profileIcon">
                                 <img src="https://cdn2.iconfinder.com/data/icons/instagram-outline/19/11-512.png" alt="" />
@@ -201,7 +201,7 @@
                                 <h4>username</h4><p>Description</p>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
 
@@ -379,55 +379,106 @@
                 // }
 
 
-                var postStorage = [
-                    { i_username: "abhi", i_image: "https://images6.alphacoders.com/113/thumbbig-1139591.webp", i_desc: "Naruto Series" },
-                    { i_username: "krish", i_image: "https://images.alphacoders.com/129/thumbbig-1298253.webp", i_desc: "" },
-                    { i_username: "krish", i_image: "https://images4.alphacoders.com/131/thumbbig-1312296.webp", i_desc: "" },
-                    { i_username: "vru", i_image: "https://images2.alphacoders.com/129/thumbbig-1299030.webp", i_desc: "" },
-                    { i_username: "vru", i_image: "https://images8.alphacoders.com/128/thumbbig-1284988.webp", i_desc: "" },
-                ];
+//                 var postStorage = [
+//                     { i_username: "abhi", i_image: "https://images6.alphacoders.com/113/thumbbig-1139591.webp", i_desc: "Naruto Series" },
+//                     { i_username: "krish", i_image: "https://images.alphacoders.com/129/thumbbig-1298253.webp", i_desc: "" },
+//                     { i_username: "krish", i_image: "https://images4.alphacoders.com/131/thumbbig-1312296.webp", i_desc: "" },
+//                     { i_username: "vru", i_image: "https://images2.alphacoders.com/129/thumbbig-1299030.webp", i_desc: "" },
+//                     { i_username: "vru", i_image: "https://images8.alphacoders.com/128/thumbbig-1284988.webp", i_desc: "" },
+//                 ];
 
-                var divToAppendPost = document.getElementById('add-post');
-                var postString = '';
+//                 var divToAppendPost = document.getElementById('add-post');
+//                 var postString = '';
 
-                for (var i = 0; i < postStorage.length; i++) {
-                    var randomIndex = Math.floor(Math.random() * postStorage.length);
-                    var post = postStorage[randomIndex];
+//                 for (var i = 0; i < postStorage.length; i++) {
+//                     var randomIndex = Math.floor(Math.random() * postStorage.length);
+//                     var post = postStorage[randomIndex];
 
-                    postString += `<div class="post">
-    <div class="post-title">
-      <div class="profileIcon">
-        <img src="https://cdn2.iconfinder.com/data/icons/instagram-outline/19/11-512.png" alt="" />
-      </div>
-      <div class="profileName">
-        <p>${post.i_username}</p>
-      </div>
-      <div class="tripleDot">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M156,128a28,28,0,1,1-28-28A28,28,0,0,1,156,128ZM48,100a28,28,0,1,0,28,28A28,28,0,0,0,48,100Zm160,0a28,28,0,1,0,28,28A28,28,0,0,0,208,100Z"></path></svg>
-      </div>
-    </div>
-    <div class="post-image">
-      <img src="${post.i_image}" alt="" />
-    </div>
-    <div class="post-desc">
-      <div class="desc-icons">
-        <div class="icons-left">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"></path></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"></path></svg>
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.42,29.84l85.62,40.55,40.55,85.62A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14L118.42,148.9l47.24-47.25a8,8,0,0,0-11.31-11.31L107.1,137.58,24,98.22l.14,0L216,40Z"></path></svg>
-        </div>
-        <div class="icons-right">
-          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,177.57-51.77-32.35a8,8,0,0,0-8.48,0L72,209.57V48H184Z"></path></svg>
-        </div>
-      </div>
-      <div class="desc-desc">
-        <h4>${post.i_username}</h4><p>${post.i_desc}</p>
-      </div>
-    </div>
-  </div>`;
+//                     postString += `<div class="post">
+//     <div class="post-title">
+//       <div class="profileIcon">
+//         <img src="https://cdn2.iconfinder.com/data/icons/instagram-outline/19/11-512.png" alt="" />
+//       </div>
+//       <div class="profileName">
+//         <p>${post.i_username}</p>
+//       </div>
+//       <div class="tripleDot">
+//         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M156,128a28,28,0,1,1-28-28A28,28,0,0,1,156,128ZM48,100a28,28,0,1,0,28,28A28,28,0,0,0,48,100Zm160,0a28,28,0,1,0,28,28A28,28,0,0,0,208,100Z"></path></svg>
+//       </div>
+//     </div>
+//     <div class="post-image">
+//       <img src="${post.i_image}" alt="" />
+//     </div>
+//     <div class="post-desc">
+//       <div class="desc-icons">
+//         <div class="icons-left">
+//           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"></path></svg>
+//           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"></path></svg>
+//           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.42,29.84l85.62,40.55,40.55,85.62A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14L118.42,148.9l47.24-47.25a8,8,0,0,0-11.31-11.31L107.1,137.58,24,98.22l.14,0L216,40Z"></path></svg>
+//         </div>
+//         <div class="icons-right">
+//           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,177.57-51.77-32.35a8,8,0,0,0-8.48,0L72,209.57V48H184Z"></path></svg>
+//         </div>
+//       </div>
+//       <div class="desc-desc">
+//         <h4>${post.i_username}</h4><p>${post.i_desc}</p>
+//       </div>
+//     </div>
+//   </div>`;
+//                 }
+
+//                 divToAppendPost.innerHTML = postString;
+
+            var allPost=[];
+            for(var i=0;i<instagram_userData.length;i++){
+                if(instagram_currentUser.userEmail !== instagram_userData[i].userEmail){
+                    allPost.push(instagram_userData[i].userPosts);
                 }
+            }
+            console.log(allPost);
 
-                divToAppendPost.innerHTML = postString;
+            var allPostString = "";
+            var divToAppendAllPost = document.getElementById("add-post");
+            for(var i=0;i<allPost.length;i++){
+                for(var j=0;j<allPost[i].length;j++){
+                    var randomIndexPost = Math.floor(Math.random() * allPost.length);
+                var changedIndex = allPost[randomIndexPost];
+
+                allPostString += `<div class="post">
+                        <div class="post-title">
+                            <div class="profileIcon">
+                                <img src="https://cdn2.iconfinder.com/data/icons/instagram-outline/19/11-512.png" alt="" />
+                            </div>
+                            <div class="profileName">
+                                <p>username</p>
+                            </div>
+                            <div class="tripleDot">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M156,128a28,28,0,1,1-28-28A28,28,0,0,1,156,128ZM48,100a28,28,0,1,0,28,28A28,28,0,0,0,48,100Zm160,0a28,28,0,1,0,28,28A28,28,0,0,0,208,100Z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="post-image">
+                            <img src="${changedIndex[j].i_postImage}" alt="" />
+                        </div>
+                        <div class="post-desc">
+                            <div class="desc-icons">
+                                <div class="icons-left">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M223,57a58.07,58.07,0,0,0-81.92-.1L128,69.05,114.91,56.86A58,58,0,0,0,33,139l89.35,90.66a8,8,0,0,0,11.4,0L223,139a58,58,0,0,0,0-82Zm-11.35,70.76L128,212.6,44.3,127.68a42,42,0,0,1,59.4-59.4l.2.2,18.65,17.35a8,8,0,0,0,10.9,0L152.1,68.48l.2-.2a42,42,0,1,1,59.36,59.44Z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128ZM84,116a12,12,0,1,0,12,12A12,12,0,0,0,84,116Zm88,0a12,12,0,1,0,12,12A12,12,0,0,0,172,116Zm60,12A104,104,0,0,1,79.12,219.82L45.07,231.17a16,16,0,0,1-20.24-20.24l11.35-34.05A104,104,0,1,1,232,128Zm-16,0A88,88,0,1,0,51.81,172.06a8,8,0,0,1,.66,6.54L40,216,77.4,203.53a7.85,7.85,0,0,1,2.53-.42,8,8,0,0,1,4,1.08A88,88,0,0,0,216,128Z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M227.32,28.68a16,16,0,0,0-15.66-4.08l-.15,0L19.57,82.84a16,16,0,0,0-2.42,29.84l85.62,40.55,40.55,85.62A15.86,15.86,0,0,0,157.74,248q.69,0,1.38-.06a15.88,15.88,0,0,0,14-11.51l58.2-191.94c0-.05,0-.1,0-.15A16,16,0,0,0,227.32,28.68ZM157.83,231.85l-.05.14L118.42,148.9l47.24-47.25a8,8,0,0,0-11.31-11.31L107.1,137.58,24,98.22l.14,0L216,40Z"></path></svg>
+                                </div>
+                                <div class="icons-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#000000" viewBox="0 0 256 256"><path d="M184,32H72A16,16,0,0,0,56,48V224a8,8,0,0,0,12.24,6.78L128,193.43l59.77,37.35A8,8,0,0,0,200,224V48A16,16,0,0,0,184,32Zm0,177.57-51.77-32.35a8,8,0,0,0-8.48,0L72,209.57V48H184Z"></path></svg>
+                                </div>
+                            </div>
+                            <div class="desc-desc">
+                                <h4>username</h4><p>${changedIndex[j].i_postDesc}</p>
+                            </div>
+                        </div>
+                    </div>`;
+                }
+            }
+
+            divToAppendAllPost.innerHTML = allPostString;
 
 
 

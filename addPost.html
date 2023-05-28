@@ -29,7 +29,7 @@
                 var i_postImage = document.getElementById("instagram_addPostImage").value;
                 var i_postDesc = document.getElementById("instagram_addPostDesc").value;
 
-                var post_object = {i_postImage,i_postDesc};
+                var post_object = {i_userImage: instagram_currentUser.userImage,i_postUsername: instagram_currentUser.userName,i_postImage,i_postDesc};
 
                 var instagram_userData = JSON.parse(localStorage.getItem("instagram_users"));
                 for(var i=0;i<instagram_userData.length;i++){
